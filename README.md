@@ -1,1 +1,3 @@
-# review-site-frontend
+# Review Site Project
+
+**Type of Review Site:**
