@@ -1,5 +1,4 @@
-# Review Site Project
-
-Review type~Movie Reivew
-Headless CMS~strapi
-Frontend Tool~ vite +React
+# Review Site Frontend
+Review Type ~ Game Review
+Headless CMS ~ Strapi
+Frontend tool ~ React + Vite

@@ -1,0 +1,57 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2) !important;
+}
+
+.btn-primary {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  border: none;
+  padding: 12px 30px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+.display-4 {
+  background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.form-control:focus {
+  border-color: #4ecdc4;
+  box-shadow: 0 0 0 0.2rem rgba(78, 205, 196, 0.25);
+}
