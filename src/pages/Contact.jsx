@@ -22,7 +22,7 @@ function Contact() {
         </div>
         <div className="col-lg-4">
           <h5>Get in Touch</h5>
-          <p>Email: hello@reviewsite.com</p>
+          <p>Email:games@viewsite.com</p>
           <p>Phone: (555) 123-4567</p>
         </div>
       </div>

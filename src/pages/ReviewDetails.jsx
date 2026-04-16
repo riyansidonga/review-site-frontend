@@ -17,12 +17,17 @@ function ReviewDetails() {
   }
 
   return (
-    <div className="container py-5">
-{review.attributes.Title}
-{review.attributes.Category}
-{review.attributes.Rating}
-{review.attributes.Summary}
-{review.attributes.Content}
+<div className="container py-5">
+<h1>{review.attributes.Title}</h1>
+{review.attributes.Image?.data?.attributes?.url && (
+  <img src={`http://localhost:1337${review.attributes.Image.data.attributes.url}`} alt={review.attributes.Title} className="img-fluid mb-4 rounded shadow" />
+)}
+<p className="text-muted mb-2">{review.attributes.Category}</p>
+<p className="mb-3"><strong>Rating:</strong> {review.attributes.Rating}/10</p>
+<div className="mb-3">
+  <strong>Summary:</strong> {review.attributes.Summary}
+</div>
+<div dangerouslySetInnerHTML={{ __html: review.attributes.Content }} />
     </div>
   );
 }

@@ -9,7 +9,7 @@ function Home() {
           <a href="/contact" className="btn btn-outline-light btn-lg">Contact Us</a>
         </div>
         <div className="col-lg-6">
-          <img src="https://unsplash.com/photos/person-sitting-on-gaming-chair-while-playing-video-game-Mf23RF8xArY" className="img-fluid rounded shadow" alt="Movies" />
+          <img src="/images/image1.jpg" className="img-fluid rounded shadow" alt="Games" />
         </div>
       </div>
     </div>

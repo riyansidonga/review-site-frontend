@@ -13,7 +13,7 @@ function Reviews() {
   }, []);
 
   const filteredReviews = reviews.filter((review) =>
-    review.attributes.Title.toLowerCase().includes(search.toLowerCase())
+    review.attributes.Title?.toLowerCase().includes(search.toLowerCase()) || ''
   );
 
   return (
@@ -31,10 +31,11 @@ function Reviews() {
       <div className="row">
         {filteredReviews.map((review) => (
           <div className="col-12 col-md-6 col-lg-4 mb-4" key={review.id}>
-            <div className="card h-100 shadow-sm">
+<img src={review.attributes.Image?.data?.attributes?.url ? `http://localhost:1337${review.attributes.Image.data.attributes.url}` : '/images/placeholder-movie.jpg'} alt={review.attributes.Title} className="card-img-top" style={{height: '200px', objectFit: 'cover'}} />
+<div className="card h-100 shadow-sm">
               <div className="card-body">
-{review.attributes.Title}
-{review.attributes.Summary}
+<h5 className="card-title">{review.attributes.Title}</h5>
+<p className="card-text">{review.attributes.Summary}</p>
                 <Link to={`/reviews/${review.id}`} className="btn btn-primary">
                   Read Full Review
                 </Link>
