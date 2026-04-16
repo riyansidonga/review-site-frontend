@@ -2,4 +2,4 @@
 
 Review type~Movie Reivew
 Headless CMS~strapi
-Frontend Tool~VitePress
+Frontend Tool~React
