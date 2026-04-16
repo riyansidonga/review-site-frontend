@@ -1,3 +1,5 @@
 # Review Site Project
 
-**Type of Review Site:**
+Review type~Movie Reivew
+Headless CMS~strapi
+Frontend Tool~VitePress
