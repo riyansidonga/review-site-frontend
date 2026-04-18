@@ -73,3 +73,7 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+# Review Site Frontend
+Review Type ~ Game Review
+Headless CMS ~ Strapi
+Frontend tool ~ React + Vite
