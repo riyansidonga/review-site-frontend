@@ -1,79 +1,31 @@
-# Nuxt Minimal Starter
+# Review Site Frontend
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+## Project Overview
+This is the frontend for our Movie Review Site group assignment. It uses Vue 3 with Vite and Vue Router to display movie review data from a Strapi Headless CMS. The site includes a review list, search functionality, individual review pages, and a responsive layout.
+
+## Review Type
+Movie Review
+
+## Headless CMS
+Strapi
+
+## Frontend Tool
+Vue 3 + Vite + Vue Router
+
+## Features
+- Displays movie reviews from the Strapi REST API
+- Search functionality for filtering reviews by title
+- Individual review detail pages
+- Site-wide navigation
+- Responsive layout for multiple screen sizes
+- Cover images for each review
+
+## Project Structure
+The working frontend project is located inside the `frontend-clean` folder.
 
 ## Setup
 
-Make sure to install dependencies:
-
+### Install dependencies
 ```bash
-# npm
+cd frontend-clean
 npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
-pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
-```
-
-## Production
-
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
-pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
-```
-
-Locally preview production build:
-
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
-# Review Site Frontend
-Review Type ~ Game Review
-Headless CMS ~ Strapi
-Frontend tool ~ React + Vite
