@@ -3,6 +3,11 @@
 ## Project Overview
 This is the frontend for our Movie Review Site group assignment. It uses Vue 3 with Vite and Vue Router to display movie review data from a Strapi Headless CMS. The site includes a review list, search functionality, individual review pages, and a responsive layout.
 
+## Group Members
+- Riyansi Donga
+- Edward Owusu Boafo
+- Antonio Fernando
+
 ## Review Type
 Movie Review
 
@@ -28,4 +33,7 @@ The working frontend project is located inside the `frontend-clean` folder.
 ### Install dependencies
 ```bash
 cd frontend-clean
-npm install
+npm run dev
+
+## Live Site 
+https://review-site-headless-cms.netlify.app/
