@@ -5,16 +5,28 @@ import { useRoute, RouterLink } from 'vue-router'
 const route = useRoute()
 const review = ref(null)
 const loading = ref(true)
+const errorMessage = ref('')
 
 onMounted(async () => {
-  const response = await fetch('http://localhost:1337/api/reviews?populate=*')
-  const data = await response.json()
+  try {
+    const response = await fetch('https://smart-garden-e8b5ab7c03.strapiapp.com/api/reviews?populate=*')
 
-  review.value = data.data.find(
-    (item) => item.slug.toLowerCase() === route.params.slug.toLowerCase()
-  )
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`)
+    }
 
-  loading.value = false
+    const data = await response.json()
+
+    review.value =
+      data.data.find(
+        (item) => item.slug.toLowerCase() === route.params.slug.toLowerCase()
+      ) || null
+  } catch (error) {
+    console.error('Fetch error:', error)
+    errorMessage.value = 'Could not load review.'
+  } finally {
+    loading.value = false
+  }
 })
 </script>
 
@@ -23,12 +35,17 @@ onMounted(async () => {
     <p>Loading review...</p>
   </section>
 
+  <section v-else-if="errorMessage">
+    <p>{{ errorMessage }}</p>
+    <RouterLink to="/">Go back home</RouterLink>
+  </section>
+
   <section v-else-if="review" class="detail-card">
     <RouterLink to="/" class="back-link">← Back</RouterLink>
 
     <img
       v-if="review.coverImage && review.coverImage.url"
-      :src="`http://localhost:1337${review.coverImage.url}`"
+      :src="review.coverImage.url"
       :alt="review.title"
       class="detail-image"
     />

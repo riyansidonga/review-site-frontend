@@ -5,12 +5,25 @@ import { RouterLink } from 'vue-router'
 const reviews = ref([])
 const search = ref('')
 const loading = ref(true)
+const errorMessage = ref('')
 
 onMounted(async () => {
-  const response = await fetch('http://localhost:1337/api/reviews?populate=*')
-  const data = await response.json()
-  reviews.value = data.data
-  loading.value = false
+  try {
+    const response = await fetch('https://smart-garden-e8b5ab7c03.strapiapp.com/api/reviews?populate=*')
+
+    if (!response.ok) {
+      throw new Error(`HTTP ${response.status}`)
+    }
+
+    const data = await response.json()
+    console.log('API data:', data)
+    reviews.value = data.data || []
+  } catch (error) {
+    console.error('Fetch error:', error)
+    errorMessage.value = 'Could not load reviews.'
+  } finally {
+    loading.value = false
+  }
 })
 
 const filteredReviews = computed(() => {
@@ -32,12 +45,13 @@ const filteredReviews = computed(() => {
     />
 
     <p v-if="loading">Loading reviews...</p>
+    <p v-if="errorMessage">{{ errorMessage }}</p>
 
     <div v-else class="review-grid">
       <article v-for="review in filteredReviews" :key="review.id" class="card">
         <img
           v-if="review.coverImage && review.coverImage.url"
-          :src="`http://localhost:1337${review.coverImage.url}`"
+          :src="review.coverImage.url"
           :alt="review.title"
           class="review-image"
         />
